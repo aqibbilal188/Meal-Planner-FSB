@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI Diet & Workout Planner</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="0213 (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>AI Diet & Workout Planner</h1>
+        <form id="dietForm">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+            <input type="number" id="height" placeholder="Enter your height (cm)" required>
+            <input type="text" id="goal" placeholder="Your Goal (e.g., Weight Loss, Muscle Gain)" required>
+            <button type="button" onclick="redirectToResult()">Get My Plan</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToResult() {
+            // Get user input values
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const weight = document.getElementById("weight").value;
+            const height = document.getElementById("height").value;
+            const goal = document.getElementById("goal").value;
+
+            // Redirect to result.html with user input as URL parameters
+            if (name && age && weight && height && goal) {
+                window.location.href = `result.html?name=${encodeURIComponent(name)}&age=${age}&weight=${weight}&height=${height}&goal=${encodeURIComponent(goal)}`;
+            } else {
+                alert("Please fill all the fields.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+    
